@@ -8,3 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: Omochice/action-podeno@main
+        with:
+          message: "hohoho"
