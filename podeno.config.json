@@ -1,14 +1,12 @@
-{
-  "work": [
-    {
-      "type": "markdown",
-      "in": "README.pod",
-      "out": "README.md"
-    },
-    {
-      "type": "vimdoc",
-      "in": "README.pod",
-      "out": "doc/sample.txt"
-    }
-  ]
-}
+[
+  {
+    "type": "markdown",
+    "in": "README.pod",
+    "out": "README.md"
+  },
+  {
+    "type": "vimdoc",
+    "in": "README.pod",
+    "out": "doc/sample.txt"
+  }
+]
