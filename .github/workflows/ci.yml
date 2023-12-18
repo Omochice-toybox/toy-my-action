@@ -14,7 +14,10 @@ jobs:
           config: |
             [
               { type: "markdown", in: "README.pod", out: "README.md", },
-              { type: "vimdoc", in: "README.pod", out: "sample.txt", },
+              { type: "vimdoc", in: "README.pod", out: "doc/sample.txt", autoMkdir: true, },
             ]
-      - run: "ls"
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "docs: update docs"
+          branch: ${{ github.head_ref }}
 
