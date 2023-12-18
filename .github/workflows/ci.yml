@@ -11,3 +11,5 @@ jobs:
       - uses: Omochice/action-podeno@sandbox
         with:
           config: podeno.config.json
+      - run: "ls"
+
