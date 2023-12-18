@@ -13,8 +13,8 @@ jobs:
         with:
           config: |
             [
-              { "type": "markdown", "in": "README.pod", "out": "README.md" },
-              { "type": "vimdoc", "in": "README.pod", "out": "sample.txt" }
+              { type: "markdown", in: "README.pod", out: "README.md", },
+              { type: "vimdoc", in: "README.pod", out: "sample.txt", },
             ]
       - run: "ls"
 
