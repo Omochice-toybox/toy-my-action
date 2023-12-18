@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Omochice/action-podeno@sandbox
+      - uses: Omochice/action-podeno@v0
         with:
           config: |
             [
