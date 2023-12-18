@@ -11,6 +11,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: Omochice/action-podeno@sandbox
         with:
-          config: "${{fromJSON([{ 'type': 'mardown', 'in': 'README.pod', 'out': 'README.md' }, { 'type': 'vimdoc', 'in': 'README.pod', 'out': 'sample.txt' }])}}"
+          config: "${{fromJSON(\"[{ 'type': 'mardown', 'in': 'README.pod', 'out': 'README.md' }, { 'type': 'vimdoc', 'in': 'README.pod', 'out': 'sample.txt' }]\")}}"
       - run: "ls"
 
