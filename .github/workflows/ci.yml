@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: Omochice/action-normalize-vim-plugin-name@dev
+        id: normalize
+        with:
+          strip-dot-vim: true
+      - run: echo "${{ steps.normalize.outputs.normaizedName }}"
       - uses: Omochice/action-podeno@v0.1.0
         with:
           config: |
@@ -16,8 +21,8 @@ jobs:
               { type: "markdown", in: "README.pod", out: "README.md", },
               { type: "vimdoc", in: "README.pod", out: "doc/sample.txt", autoMkdir: true, },
             ]
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "docs: update docs"
-          branch: ${{ github.head_ref }}
+      # - uses: stefanzweifel/git-auto-commit-action@v4
+      #   with:
+      #     commit_message: "docs: update docs"
+      #     branch: ${{ github.head_ref }}
 
