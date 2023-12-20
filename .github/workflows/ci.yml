@@ -12,14 +12,14 @@ jobs:
       - uses: Omochice/action-normalize-vim-plugin-name@dev
         id: normalize
         with:
-          strip-dot-vim: true
-      - run: echo "${{ steps.normalize.outputs.normaizedName }}"
+          trim-tail-dot-vim: true
+      - run: echo "${{ steps.normalize.outputs.normalizedName }}"
       - uses: Omochice/action-podeno@v0.1.0
         with:
           config: |
             [
               { type: "markdown", in: "README.pod", out: "README.md", },
-              { type: "vimdoc", in: "README.pod", out: "doc/sample.txt", autoMkdir: true, },
+              { type: "vimdoc", in: "README.pod", out: "doc/${{ steps.normalize.outputs.normalizedName }}.txt", autoMkdir: true, },
             ]
       # - uses: stefanzweifel/git-auto-commit-action@v4
       #   with:
